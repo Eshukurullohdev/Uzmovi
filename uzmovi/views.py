@@ -4,7 +4,7 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
+#Post.Get.Delete.Update.Create
 
-class BaseView(TemplateView):
-    template_name = 'base.html'
+#Edit -- Tahrirlash
 
