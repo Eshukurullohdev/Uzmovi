@@ -1,16 +1,68 @@
-<div class="w-full h-[100px] bg-[#222933]">
-    <div class="container_large flex items-center justify-between">
-        <img src="/static/img/logo.gif" alt="" width="290px" height="80px">
-        <ul class="flex items-center justify-center gap-4 text-[#A5BBDC] uppercase text-[14px]">
-            <a style="transition: 0.5s all ease-in-out;"
-                class="hover:bg-[#7F4726] w-[100px] h-[100px] hover:text-white flex items-center justify-center"
-                href="#">Bosh Sahifa</a>
-            <a href="#">Kinolar</a>
-            <a href="#">Seriallar</a>
-            <a href="#">Janr</a>
-            <a href="#">Yili</a>
-            <a href="#">Mamlakat</a>
-            <a href="#">Kino Yangiliklari</a>
-        </ul>
+{% load static %}
+<div class=" w-full h-[160px] bg-[#222933]">
+    <div class="container_large w-full ">
+        <div class="w-full flex   justify-between">
+            <a href="{% url 'home' %}">
+                <img src="/static/img/logo.gif" alt="">
+            </a>
+            <div class="text-[#6e879f] flex mt-[25px]">
+                <a class="w-[117px] border-b-[1px] border-[orange] " href="#">BOSH SAHIFA</a>
+                <a class="w-[99px]  border-b-[1px] border-[green] flex" href="#">KINOLAR<img
+                        class="w-[12px] mt-[5px] ml-[7px] h-[12px]" src="{% static 'img/down.png' %}" alt=""></a>
+                <a class="w-[101px]  border-b-[1px] border-[blue]" href="#">SERILLAR</a>
+                <a class="w-[74px]  border-b-[1px] border-[red] flex" href="#">JANR<img
+                        class="w-[12px] mt-[5px] ml-[7px] h-[12px]" src="{% static 'img/down.png' %}" alt=""></a>
+                <a class="w-[59px]  border-b-[1px] border-[yellow] flex" href="#">YIL<img
+                        class="w-[12px] mt-[5px] ml-[7px] h-[12px]" src="{% static 'img/down.png' %}" alt=""></a>
+                <a class="w-[113px]  border-b-[1px] border-[purple] flex" href="#">MAMLAKAT<img
+                        class="w-[12px] mt-[5px] ml-[7px] h-[12px]" src="{% static 'img/down.png' %}" alt=""></a>
+                <a class="w-[156px]  border-b-[1px] border-[orange]" href="#">KINO YANGILIKLARI</a>
+            </div>
+        </div>
     </div>
+    
+    <div class="bg-[#161d25] w-[100%] h-[3474px] ">
+        <div class="w-[1170px] h-[80px] flex gap-[12px] mx-auto py-[12px]">
+            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                src="{% static 'img/birinchirasm.jpg' %}" alt="">
+            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                src="{% static 'img/ikkinchirasm.jpg' %}" alt="">
+            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                src="{% static 'img/uchinchirasm.jpg' %}" alt="">
+            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                src="{% static 'img/tortinchirasm.jpg' %}" alt="">
+            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                src="{% static 'img/beshinchirasm.jpg' %}" alt="">
+            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                src="{% static 'img/oltinchirasm.jpg' %}" alt="">
+            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                src="{% static 'img/yettinchirasm.jpg' %}" alt="">
+            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                src="{% static 'img/sakkizinchirasm.jpg' %}" alt="">
+            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                src="{% static 'img/toqqizinchirasm.jpg' %}" alt="">
+            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                src="{% static 'img/oninchirasm.jpg' %}" alt="">
+            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                src="{% static 'img/onbirinchirasm.jpg' %}" alt="">
+            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                src="{% static 'img/onikkinchirasm.jpg' %}" alt="">
+            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                src="{% static 'img/onuchinchirasm.jpg' %}" alt="">
+            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                src="{% static 'img/ontortinchirasm.jpg' %}" alt="">
+            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                src="{% static 'img/onbeshinchirasm.jpg' %}" alt="">
+            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                src="{% static 'img/onoltinchirasm.jpg' %}" alt="">
+
+            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                src="{% static 'img/onyettinchirasm.jpg' %}" alt="">
+        </div>
+    </div>
+
+
+
+
+</div>
 </div>
