@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+<div class="flex items-center justify-center mt-[60px] flex-col">
+    <h1 class="font-semibold text-[#A5BBDC] text-[24px]">Tizimga Kirish</h1>
+    <div>
+        <div class="flex">
+            <i class="w-[38px] h-[40px] bg-[#333D4D] fa-solid fa-user flex items-center justify-center text-[#6E879F] rounded-l-[5px]"></i>
+            <input style="    box-shadow: -1px 11px 119px -3px rgba(83, 83, 188, 0.47);
+            -webkit-box-shadow: -1px 11px 119px -3px rgba(83, 83, 188, 0.47);
+            -moz-box-shadow: -1px 11px 119px -3px rgba(83, 83, 188, 0.47);" class="hover-input w-[341px] p-2 text-[12px] outline-none h-[40px] bg-[#28313E] rounded-r-[5px]" type="Username" placeholder="Username" required>
+        </div>
+        <div class="flex mt-2">
+            <i class="w-[38px] h-[40px] bg-[#333D4D] fa-solid fa-key flex items-center justify-center text-[#6E879F] rounded-l-[5px]"></i>
+            <input class="w-[341px] p-2 text-[12px] outline-none h-[40px] bg-[#28313E] rounded-r-[5px]" type="Parol" placeholder="Parol" required>
+        </div>
+    </div>
+    <div class="flex items-center gap-[220px] mt-4">
+        <div>
+            <input type="checkbox" name="" id="">
+            <span class="text-[#6e879f] text-[12px]">Eslab qolish</span>
+        </div>
+        <div>
+            <a class="text-[#a5bbdc] text-[12px]" href="#">Parolni Tiklash</a>
+        </div>
+    </div>
+    <button class="w-[380px] h-[35px] text-white mt-4  text-[12px] bg-[#638B34] rounded-lg">KIRISH</button>
+    <div class="mt-2 flex gap-2">
+        <span class="text-[#6e879f] text-[12px]">Akkauntiz yo'qmi?</span>
+        <a class="flex itemes-center justify-center text-[12px] text-[#a5bbdc]" href="#"> Ro'yhatan o'tish
+        </a>
+    </div>
+</div>
+{% endblock %}
+
