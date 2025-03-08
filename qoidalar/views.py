@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def Qoida(request):
+    return render(request, 'qoida.html')
