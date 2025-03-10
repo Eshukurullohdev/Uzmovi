@@ -5,9 +5,9 @@
 <div class="flex items-center justify-center mt-[60px] flex-col">
     <h1 class="font-semibold text-[#A5BBDC] text-[24px]">Tizimga Kirish</h1>
     <div>
+  
         <form method="post">
-            {% csrf_token %}
-       
+        {% csrf_token %}
         <div class="flex">
             <i class="w-[38px] h-[40px] bg-[#333D4D] fa-solid fa-user flex items-center justify-center text-[#6E879F] rounded-l-[5px]"></i>
             <input class="focus:box-shadow-main w-[341px] p-2 text-[12px] outline-none h-[40px] bg-[#28313E] rounded-r-[5px]" type="Username" placeholder="Username" required name="username">
@@ -16,8 +16,6 @@
             <i class="w-[38px] h-[40px] bg-[#333D4D] fa-solid fa-key flex items-center justify-center text-[#6E879F] rounded-l-[5px]"></i>
             <input class="  w-[341px] p-2 text-[12px] outline-none h-[40px] bg-[#28313E] rounded-r-[5px]" type="Parol" placeholder="Parol" required name="password">
         </div>
-       
-   
     </div>
     <div class="flex items-center gap-[220px] mt-4">
         <div>
