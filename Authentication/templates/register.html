@@ -6,7 +6,7 @@
     <h1 class=" text-[#A5BBDC] text-[27px]">Royhatdan otish</h1>
     <div>
         <form method="post">
-            {% csrf_token%}
+            {% csrf_token %}
 
             <div class="flex mt-2">
                 <i
@@ -15,14 +15,14 @@
             -webkit-box-shadow: -1px 11px 119px -3px rgba(83, 83, 188, 0.47);
             -moz-box-shadow: -1px 11px 119px -3px rgba(83, 83, 188, 0.47);"
                     class="hover-input w-[341px] p-2 text-[12px] outline-none h-[40px] bg-[#28313E] rounded-r-[5px]"
-                    type="email" placeholder="Email manzil" required>
+                    type="email" placeholder="Email"  required name="email">
             </div>
             <div class="flex mt-2">
                 
                 <i
                     class="w-[38px] h-[40px] bg-[#333D4D] fa-solid fa-user flex items-center justify-center text-[#6E879F] rounded-l-[5px]"></i>
                 <input class="w-[341px] p-2 text-[12px] outline-none h-[40px] bg-[#28313E] rounded-r-[5px]" type="login"
-                    placeholder="Login" required>
+                    placeholder="Username" name="username" required>
             </div>
             <div class="flex mt-2">
                 <i
@@ -31,7 +31,7 @@
             -webkit-box-shadow: -1px 11px 119px -3px rgba(83, 83, 188, 0.47);
             -moz-box-shadow: -1px 11px 119px -3px rgba(83, 83, 188, 0.47);"
                     class="hover-input w-[341px] p-2 text-[12px] outline-none h-[40px] bg-[#28313E] rounded-r-[5px]"
-                    type="Username" placeholder="Parol" required>
+                    type="Parol" placeholder="Parol" name="parol" required>
             </div>
 
             <div class="flex mt-2">
@@ -41,9 +41,12 @@
             -webkit-box-shadow: -1px 11px 119px -3px rgba(83, 83, 188, 0.47);
             -moz-box-shadow: -1px 11px 119px -3px rgba(83, 83, 188, 0.47);"
                     class="hover-input w-[341px] p-2 text-[12px] outline-none h-[40px] bg-[#28313E] rounded-r-[5px]"
-                    type="Username" placeholder="Parolni tasdiqlash" required>
+                    type="Username" placeholder="Parolni tasdiqlash" name="parolni_tasdiqlang" required>
             </div>
 
+            <button type="submit" class="w-[380px] h-[35px] text-white mt-4  text-[17 px] bg-[#638B34] rounded-[5px]">Davom etish</button>
+
+        </form>
     </div>
     <div class="flex items-center gap-[220px] mt-4">
         <div>
@@ -51,8 +54,6 @@
             <span class="text-[#6e879f] text-[12px]">Foydalanish shartlariga roziman</span>
         </div>
     </div>
-    <button class="w-[380px] h-[35px] text-white mt-4  text-[17 px] bg-[#638B34] rounded-[5px]">Davom etish</button>
-    </form>
     <div class="mt-2 flex gap-2">
         <span class="text-[#6e879f] text-[12px]">Allaqachon ochigan akauntingiz mavjudmi?</span>
         <a class="flex itemes-center justify-center text-[12px] text-[#a5bbdc]" href="{% url 'login' %}"> Kirish

@@ -1,7 +1,8 @@
 from django.contrib.auth import authenticate, login as auth_login, get_user_model
 from django.shortcuts import render, redirect
 import logging
-
+from django.contrib.auth.models import User
+from django.contrib import messages
 logger = logging.getLogger(__name__)  
 User = get_user_model()  # Django user modelini olish
 
@@ -41,7 +42,35 @@ def login(request):
 
     return render(request, 'login.html')
 def register(request):
+    
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        username = request.POST.get('username')
+        password = request.POST.get('parol')
+        password_tasdiqlang = request.POST.get('parolni_tasdiqlang')
+
+        if password != password_tasdiqlang:
+            messages.error(request, "Parol birhil emas!")
+            return redirect('register')
+
+        if User.objects.filter(email=email).exists():
+            messages.error(request, "Bu emeil alaqochon mavjud! ")
+            return redirect('register')
+
+        user = User.objects.create_user(email=email, username=username, password=password)
+        user.save()
+
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            auth_login(request, user)
+            messages.success(request, "Siz muvafaqiyatli ro'yhatan o'tdingiz")
+            return redirect('home')
+
+        messages.error(request, "Authenticationda xatolik yuz berdi")
+        return redirect('register')
+
     return render(request, 'register.html')
+
 def contact(request):
     return render(request, 'contact.html')
 def regulation(request):
