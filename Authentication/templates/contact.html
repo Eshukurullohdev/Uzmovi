@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+<div class="w-[1190px] h-[579px] flex m-auto mt-[40px]">
+    <div class="w-[852px] h-[100%] bg-[#222933]">
+        <h1 class="text-[#a5bbdc] mt-[35px] ml-[18px] text-[22px]">BIZ BILAN ALOQA</h1>
+        <div class="w-[3px] h-[40px] bg-[purple] mt-[-35px]"></div>
+        <div class="w-full h-[108px] bg-[#24303d] mt-[20px]">
+            <div class="w-[772px] h-[68px] m-auto pt-[20px]">
+                <h2 class="text-[12px] text-[#a5bbdc]">Assalomu alaykum, saytimizning hurmatli mehmoni!</h2>
+                <p class="text-[12px] text-[#a5bbdc] mt-[20px]">Quyidagi aloqa formasidan foydalanib, bizga istalgan
+                    mavzuda xabar
+                    yuborishingiz mumkin. 24 soat ichida murojaatingizni ko'rib chiqib sizga javob yozamiz. Saytimizni
+                    tanlaganingiz uchun tashakkur!</p>
+            </div>
+        </div>
+        <div class="w-[852px] h-[323px] m-auto mt-[40px]" style="padding: 0 40px;">
+            <form method="create">
+                <div class="flex mt-2">
+                    <i
+                        class="w-[38px] h-[34px] bg-[#333D4D] fa-solid fa-user flex items-center justify-center text-[#6E879F] rounded-l-[5px]"></i>
+                    <input style=" padding: 6px 12px;"
+                        class="hover-input w-[733px] p-2 text-[12px] outline-none h-[34px] bg-[#28313E] rounded-r-[5px]"
+                        type="Username" placeholder="Ismingiz" required>
+                </div>
+                <div class="flex mt-2">
+                    <i
+                        class="w-[38px] h-[34px] bg-[#333D4D] fa-solid fa-at flex items-center justify-center text-[#6E879F] rounded-l-[5px]"></i>
+                    <input style=" padding: 6px 12px;"
+                        class="hover-input w-[733px] p-2 text-[11px] outline-none h-[34px] bg-[#28313E] rounded-r-[5px]"
+                        type="email" placeholder="E-mail, telefon raqam yoki telegram havola" required>
+                </div>
+                <div class="flex mt-2">
+                    <i
+                        class="w-[38px] h-[34px] bg-[#333D4D] fa-solid fa-envelope flex items-center justify-center text-[#6E879F] rounded-l-[5px]"></i>
+                    <input style=" padding: 6px 12px;"
+                        class="hover-input w-[733px] p-2 text-[11px] outline-none h-[34px] bg-[#28313E] rounded-r-[5px]"
+                        type="option" placeholder="Bolim" required>
+                </div>
+                <div class="flex mt-2">
+                    <i
+                        class="w-[38px] h-[34px] bg-[#333D4D] fa-solid fa-file-lines flex items-center justify-center text-[#6E879F] rounded-l-[5px]"></i>
+                    <input style=" padding: 6px 12px;"
+                        class="hover-input w-[733px] p-2 text-[11px] outline-none h-[34px] bg-[#28313E] rounded-r-[5px]"
+                        type="message" placeholder="Xabar mavzusi" required>
+                </div>
+                <div class="flex mt-2">
+                    <i
+                        class="w-[38px] h-[101px] bg-[#333D4D] fa-solid fa-pen-to-square flex items-center justify-center text-[#6E879F] rounded-l-[5px]"></i>
+                    <textarea style=" padding: 6px 12px;"
+                        class="hover-input w-[733px] p-2 text-[11px] outline-none h-[101px] bg-[#28313E] rounded-r-[5px]"
+                        type="text" placeholder="Xabar..." required></textarea>
+                </div>
+                <button
+                    class="w-[772px] h-[34px] flex itemes-center justify-center p-[4px] bg-[#232f3d] text-[#99b1d4] text-[17px] mt-[20px]  ">Yuborish</button>
+            </form>
+        </div>
+    </div>
+    <div class="w-[277px] h-[579px] ml-[40px]">
+        <div class="w-full h-[60px] flex itemes-center justify-center">
+            <div class="flex itemes-center justify-center w-[68px] h-[60px] bg-[#2aabeeb3]">
+                <i class="fa-brands fa-telegram text-[#fff] text-[22px] mt-[20px]"></i>
+            </div>
+            <div class="flex itemes-center justify-center w-[68px] h-[60px] bg-[#f12567b3]">
+                <i class="fa-brands fa-youtube text-[#fff] text-[22px] mt-[20px]"></i>
+            </div>
+            <div class="flex itemes-center justify-center w-[68px] h-[60px] bg-[#000]">
+                <i class="fa-brands fa-tiktok text-[#fff] text-[22px] mt-[20px]"></i>
+            </div>
+            <div class="flex itemes-center justify-center w-[68px] h-[60px] bg-[#c13584b3]">
+                <i class="fa-brands fa-instagram text-[#fff] text-[22px] mt-[20px]"></i>
+            </div>
+        </div>
+        <div class="w-[277px] h-[469px] bg-[#24303d] mt-[20px] pt-[20px]">
+            <h3 class="text-[17px] text-[#a5bbdc] ml-[20px] font-bold">TASODIFIY FILMLAR</h3>
+            <div class="w-[3px] h-[30px] bg-[blue] mt-[-25px]"></div>
+            <div class="w-[218px] h-[351px] m-auto bg-[#161d25] mt-[20px] text-center">
+                <img class="w-[218px] h-[285px] bg-no-repeat bg-cover bg-center object-cover"
+                    src="/static/img/last-img.jpg" alt="">
+                <h2 class="text-[13px] text-[#a5bbdc] mt-[20px]">Snayper: So'nggi jang (premyera)</h2>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

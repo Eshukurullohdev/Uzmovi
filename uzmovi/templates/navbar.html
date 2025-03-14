@@ -1,26 +1,27 @@
 {% load static %}
 <div class=" w-full h-[160px] bg-[#222933]">
     <div class="container_large w-full ">
-        <div class="w-full flex   justify-between">
-            <a href="{% url 'home' %}">
+        <div class="w-full h-[100px] flex itemes-center justify-between">
+            <a href="{% url 'home' %}" class="mt-[10px]">
                 <img src="/static/img/logo.gif" alt="">
             </a>
-            <div class="text-[#6e879f] flex mt-[25px]">
-                <a class="w-[117px] border-b-[1px] border-[orange] " href="#">BOSH SAHIFA</a>
-                <a class="w-[99px]  border-b-[1px] border-[green] flex" href="#">KINOLAR<img
-                        class="w-[12px] mt-[5px] ml-[7px] h-[12px]" src="{% static 'img/down.png' %}" alt=""></a>
-                <a class="w-[101px]  border-b-[1px] border-[blue]" href="#">SERILLAR</a>
-                <a class="w-[74px]  border-b-[1px] border-[red] flex" href="#">JANR<img
-                        class="w-[12px] mt-[5px] ml-[7px] h-[12px]" src="{% static 'img/down.png' %}" alt=""></a>
-                <a class="w-[59px]  border-b-[1px] border-[yellow] flex" href="#">YIL<img
-                        class="w-[12px] mt-[5px] ml-[7px] h-[12px]" src="{% static 'img/down.png' %}" alt=""></a>
-                <a class="w-[113px]  border-b-[1px] border-[purple] flex" href="#">MAMLAKAT<img
-                        class="w-[12px] mt-[5px] ml-[7px] h-[12px]" src="{% static 'img/down.png' %}" alt=""></a>
-                <a class="w-[156px]  border-b-[1px] border-[orange]" href="#">KINO YANGILIKLARI</a>
+            <div class="text-[#6e879f] h-[100px] flex mt-[0px] text-center">
+                <a class="w-[117px] border-b-[1px] border-[#ff6907] hover:bg-[#ff6907] transition duration-150 ease-out hover:ease-in pt-[40px]" href="{% url 'home' %}">BOSH SAHIFA</a>
+                <a class="w-[99px]  border-b-[1px] border-[#2ECC7180] hover:bg-[#2ECC7180] transition duration-150 ease-out hover:ease-in flex itemes-center justify-center pt-[40px] " href=" #">KINOLAR <i
+                        class="fa-solid fa-chevron-down mt-[4px] ml-[4px]"></i></a>
+
+                <a class="w-[101px]  border-b-[1px] border-[#02B0E480] hover:bg-[#02B0E480] transition duration-150 ease-out hover:ease-in pt-[40px]" href="#">SERILLAR</a>
+                <a class="w-[74px]  border-b-[1px] border-[#FC1A3F80] hover:bg-[#FC1A3F80] transition duration-150 ease-out hover:ease-in flex itemes-center justify-center pt-[40px]" href="#">JANR <i
+                        class="fa-solid fa-chevron-down mt-[4px] ml-[4px]"></i></a>
+                <a class="w-[59px]  border-b-[1px] border-[#FFC14680] hover:bg-[#FFC14680] transition duration-150 ease-out hover:ease-in flex itemes-center justify-center pt-[40px]" href="#">YIL <i
+                        class="fa-solid fa-chevron-down mt-[4px] ml-[4px]"></i></a>
+                <a class="w-[113px]  border-b-[1px] border-[#9B59B680] hover:bg-[#9B59B680] transition duration-150 ease-out hover:ease-in flex itemes-center justify-center pt-[40px]" href="#">MAMLAKAT <i
+                        class="fa-solid fa-chevron-down mt-[4px] ml-[4px]"></i></a>
+                <a class="w-[156px]  border-b-[1px] border-[#FF690780] hover:bg-[#FF690780] transition duration-150 ease-out hover:ease-in pt-[40px]" href="#">KINO YANGILIKLARI</a>
             </div>
         </div>
     </div>
-    
+
     <div class="bg-[#161d25] w-[100%] h-[3474px] ">
         <div class="w-[1170px] h-[80px] flex gap-[12px] mx-auto py-[12px]">
             <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
@@ -61,37 +62,46 @@
         </div>
     </div>
 
-    
+
 
 
 </div>
 <div class="w-full bg-[#131A20] h-[140px]">
     <div class="container_large flex itemes-center justify-between pt-4">
         <div class="flex items-center gap-2 ">
-            <div style="border: 0.2px solid rgba(142, 139, 139, 0.23);" class="w-[66px] h-[40px] rounded-lg py-2 bg-[#222933] text-[#99b1d4] text-[12px] flex items-center justify-center gap-[4px]">
+            <div style="border: 0.2px solid rgba(142, 139, 139, 0.23);"
+                class="w-[66px] h-[40px] rounded-lg py-2 bg-[#222933] text-[#99b1d4] text-[12px] flex items-center justify-center gap-[4px]">
                 <i class="fa-solid fa-user"></i>
                 <a href="{% url 'login' %}">Kirish</a>
             </div>
-            <div style="border: 0.2px solid rgba(142, 139, 139, 0.23);" class="w-[115px] h-[40px] rounded-lg py-2 bg-[#222933] text-[#99b1d4] text-[12px] flex itemes-center justify-center gap-[4px]">
-                <a href="#">Ro'yhatdan o'tish</a>
+            <div style="border: 0.2px solid rgba(142, 139, 139, 0.23);"
+                class="w-[115px] h-[40px] rounded-lg py-2 bg-[#222933] text-[#99b1d4] text-[12px] flex itemes-center justify-center gap-[4px]">
+                <a href="{% url 'register' %}">Ro'yhatdan o'tish</a>
             </div>
         </div>
         <div class="flex items-center gap-2">
-            <div style="border: 0.2px solid rgba(142, 139, 139, 0.23);" class="w-[40px] h-[39px] rounded-lg flex items-center justify-center text-[#99b1d4]">
+            <div style="border: 0.2px solid rgba(142, 139, 139, 0.23);"
+                class="w-[40px] h-[39px] rounded-lg flex items-center justify-center text-[#99b1d4]">
                 <i class="fa-solid fa-film"></i>
             </div>
-            <div style="border: 0.2px solid rgba(142, 139, 139, 0.23);" class="w-[40px] h-[39px] rounded-lg flex items-center justify-center text-[#99b1d4]">
-                <i class="fa-solid fa-envelope"></i>
+            <div style="border: 0.2px solid rgba(142, 139, 139, 0.23);"
+                class="w-[40px] h-[39px] rounded-lg flex items-center justify-center text-[#99b1d4]">
+                <a href="{% url 'contact' %}">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
             </div>
-            <div style="border: 0.2px solid rgba(142, 139, 139, 0.23);" class="w-[40px] h-[39px] rounded-lg flex items-center justify-center text-[#99b1d4]">
-                <i class="fa-solid fa-hand"></i>
+            <div style="border: 0.2px solid rgba(142, 139, 139, 0.23);"
+                class="w-[40px] h-[39px] rounded-lg flex items-center justify-center text-[#99b1d4]">
+                <a href="{% url 'regulation' %}">
+                    <i class="fa-solid fa-hand"></i>
+                </a>
             </div>
         </div>
     </div>
     <div class="flex items-center justify-center mt-[25px]">
         <div class="relative" style="width: 1170px; height: 40px;">
-            <input  type="text" placeholder="Qidirish..." 
-                   class="outline-none w-full h-full pl-4 pr-10 text-white bg-gray-800 hover:bg-[#304156] border border-gray-600 rounded-[5px]">
+            <input type="text" placeholder="Qidirish..."
+                class="outline-none w-full h-full pl-4 pr-10 text-white bg-gray-800 hover:bg-[#304156] border border-gray-600 rounded-[5px]">
             <button class="absolute inset-y-0 right-3 flex items-center text-gray-400">
                 <i class="fa-solid fa-search"></i>
             </button>

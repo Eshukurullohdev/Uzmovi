@@ -5,17 +5,24 @@
 <div class="flex items-center justify-center mt-[60px] flex-col">
     <h1 class="font-semibold text-[#A5BBDC] text-[24px]">Tizimga Kirish</h1>
     <div>
-  
         <form method="post">
-        {% csrf_token %}
-        <div class="flex">
-            <i class="w-[38px] h-[40px] bg-[#333D4D] fa-solid fa-user flex items-center justify-center text-[#6E879F] rounded-l-[5px]"></i>
-            <input class="focus:box-shadow-main w-[341px] p-2 text-[12px] outline-none h-[40px] bg-[#28313E] rounded-r-[5px]" type="Username" placeholder="Username" required name="username">
-        </div>
-        <div class="flex mt-2">
-            <i class="w-[38px] h-[40px] bg-[#333D4D] fa-solid fa-key flex items-center justify-center text-[#6E879F] rounded-l-[5px]"></i>
-            <input class="  w-[341px] p-2 text-[12px] outline-none h-[40px] bg-[#28313E] rounded-r-[5px]" type="Parol" placeholder="Parol" required name="password">
-        </div>
+            {% csrf_token%}
+
+            <div class="flex">
+                <i
+                    class="w-[38px] h-[40px] bg-[#333D4D] fa-solid fa-user flex items-center justify-center text-[#6E879F] rounded-l-[5px]"></i>
+                <input style="    box-shadow: -1px 11px 119px -3px rgba(83, 83, 188, 0.47);
+            -webkit-box-shadow: -1px 11px 119px -3px rgba(83, 83, 188, 0.47);
+            -moz-box-shadow: -1px 11px 119px -3px rgba(83, 83, 188, 0.47);"
+                    class="hover-input w-[341px] p-2 text-[12px] outline-none h-[40px] bg-[#28313E] rounded-r-[5px]"
+                    type="text" name="username" placeholder="Username" required>
+            </div>
+            <div class="flex mt-2">
+                <i
+                    class="w-[38px] h-[40px] bg-[#333D4D] fa-solid fa-key flex items-center justify-center text-[#6E879F] rounded-l-[5px]"></i>
+                <input class="w-[341px] p-2 text-[12px] outline-none h-[40px] bg-[#28313E] rounded-r-[5px]"
+                    type="password" name="password" placeholder="Password" required>
+            </div>
     </div>
     <div class="flex items-center gap-[220px] mt-4">
         <div>
@@ -26,13 +33,34 @@
             <a class="text-[#a5bbdc] text-[12px]" href="#">Parolni Tiklash</a>
         </div>
     </div>
-    <button type="submit" class="w-[380px] h-[35px] text-white mt-4  text-[12px] bg-[#638B34] rounded-lg">KIRISH</button>
-</form>
+    <button class="w-[380px] h-[35px] text-white mt-4  text-[12px] bg-[#638B34] rounded-[5px]"
+        type="submit">KIRISH</button>
+    </form>
     <div class="mt-2 flex gap-2">
         <span class="text-[#6e879f] text-[12px]">Akkauntiz yo'qmi?</span>
         <a class="flex itemes-center justify-center text-[12px] text-[#a5bbdc]" href="#"> Ro'yhatan o'tish
         </a>
     </div>
+    <div class="w-[380px] h-[45px] flex items-center justify-between">
+        <div>
+            <hr class="w-[155px] h-[1px] bg-[#6e879f] mb-[3px]">
+            <hr class="w-[155px] h-[1px] bg-[#6e879f]">
+        </div>
+        <h3 class="text-[12px]" style="color: #6e897f;">YOKI</h3>
+        <div>
+            <hr class="w-[155px] h-[1px] bg-[#6e879f] mb-[3px]">
+            <hr class="w-[155px] h-[1px] bg-[#6e879f]">
+        </div>
+    </div>
+    <div class="w-[380px] h-[30px] flex items-center justify-between">
+        <p
+            class=" rounded-[5px] text-[12px] bg-[#4285f4] w-[180px] h-[34px] flex items-center justify-center text-white ">
+            <i class="fa-brands fa-google mr-[10px]" style="font-size: 20px;"></i>GOOGLE
+        </p>
+        <p
+            class=" rounded-[5px] w-[180px] h-[34px] text-[12px] bg-[#4285f4] flex items-center justify-center text-white">
+            <i class="fa-brands fa-telegram mr-[10px]" style="font-size: 20px;"></i>TELEGRAM
+        </p>
+    </div>
 </div>
 {% endblock %}
-
