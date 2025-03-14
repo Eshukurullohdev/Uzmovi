@@ -6,18 +6,21 @@
                 <img src="/static/img/logo.gif" alt="">
             </a>
             <div class="text-[#6e879f] h-[100px] flex mt-[0px] text-center">
-                <a class="w-[117px] border-b-[1px] border-[#ff6907] hover:bg-[#ff6907] transition duration-150 ease-out hover:ease-in pt-[40px]" href="{% url 'home' %}">BOSH SAHIFA</a>
-                <a class="w-[99px]  border-b-[1px] border-[#2ECC7180] hover:bg-[#2ECC7180] transition duration-150 ease-out hover:ease-in flex itemes-center justify-center pt-[40px] " href=" #">KINOLAR <i
-                        class="fa-solid fa-chevron-down mt-[4px] ml-[4px]"></i></a>
+                <a class="w-[117px] border-b-[1px] border-[#ff6907] hover:bg-[#ff6907] transition duration-150 ease-out hover:ease-in pt-[40px]"
+                    href="{% url 'home' %}">BOSH SAHIFA</a>
+                <a class="w-[99px]  border-b-[1px] border-[#2ECC7180] hover:bg-[#2ECC7180] transition duration-150 ease-out hover:ease-in flex itemes-center justify-center pt-[40px] "
+                    href=" #">KINOLAR <i class="fa-solid fa-chevron-down mt-[4px] ml-[4px]"></i></a>
 
-                <a class="w-[101px]  border-b-[1px] border-[#02B0E480] hover:bg-[#02B0E480] transition duration-150 ease-out hover:ease-in pt-[40px]" href="#">SERILLAR</a>
-                <a class="w-[74px]  border-b-[1px] border-[#FC1A3F80] hover:bg-[#FC1A3F80] transition duration-150 ease-out hover:ease-in flex itemes-center justify-center pt-[40px]" href="#">JANR <i
-                        class="fa-solid fa-chevron-down mt-[4px] ml-[4px]"></i></a>
-                <a class="w-[59px]  border-b-[1px] border-[#FFC14680] hover:bg-[#FFC14680] transition duration-150 ease-out hover:ease-in flex itemes-center justify-center pt-[40px]" href="#">YIL <i
-                        class="fa-solid fa-chevron-down mt-[4px] ml-[4px]"></i></a>
-                <a class="w-[113px]  border-b-[1px] border-[#9B59B680] hover:bg-[#9B59B680] transition duration-150 ease-out hover:ease-in flex itemes-center justify-center pt-[40px]" href="#">MAMLAKAT <i
-                        class="fa-solid fa-chevron-down mt-[4px] ml-[4px]"></i></a>
-                <a class="w-[156px]  border-b-[1px] border-[#FF690780] hover:bg-[#FF690780] transition duration-150 ease-out hover:ease-in pt-[40px]" href="#">KINO YANGILIKLARI</a>
+                <a class="w-[101px]  border-b-[1px] border-[#02B0E480] hover:bg-[#02B0E480] transition duration-150 ease-out hover:ease-in pt-[40px]"
+                    href="#">SERILLAR</a>
+                <a class="w-[74px]  border-b-[1px] border-[#FC1A3F80] hover:bg-[#FC1A3F80] transition duration-150 ease-out hover:ease-in flex itemes-center justify-center pt-[40px]"
+                    href="#">JANR <i class="fa-solid fa-chevron-down mt-[4px] ml-[4px]"></i></a>
+                <a class="w-[59px]  border-b-[1px] border-[#FFC14680] hover:bg-[#FFC14680] transition duration-150 ease-out hover:ease-in flex itemes-center justify-center pt-[40px]"
+                    href="#">YIL <i class="fa-solid fa-chevron-down mt-[4px] ml-[4px]"></i></a>
+                <a class="w-[113px]  border-b-[1px] border-[#9B59B680] hover:bg-[#9B59B680] transition duration-150 ease-out hover:ease-in flex itemes-center justify-center pt-[40px]"
+                    href="#">MAMLAKAT <i class="fa-solid fa-chevron-down mt-[4px] ml-[4px]"></i></a>
+                <a class="w-[156px]  border-b-[1px] border-[#FF690780] hover:bg-[#FF690780] transition duration-150 ease-out hover:ease-in pt-[40px]"
+                    href="#">KINO YANGILIKLARI</a>
             </div>
         </div>
     </div>
@@ -69,14 +72,23 @@
 <div class="w-full bg-[#131A20] h-[140px] mt-4">
     <div class="container_large flex itemes-center justify-between pt-4">
         <div class="flex items-center gap-2 ">
+            {% if user.is_authenticated %}
+            <a href="#">
+                <div style="border: 0.2px solid rgba(142, 139, 139, 0.23);"
+                    class="w-[66px] h-[40px] rounded-lg py-2 bg-[#222933] text-[#99b1d4] text-[12px] flex items-center justify-center gap-[4px]">
+                    <i class="text-[22px] fa-solid fa-arrow-right-from-bracket"></i>
+                </div>
+            </a>
+            {% else %}
             <div style="border: 0.2px solid rgba(142, 139, 139, 0.23);"
                 class="w-[66px] h-[40px] rounded-lg py-2 bg-[#222933] text-[#99b1d4] text-[12px] flex items-center justify-center gap-[4px]">
                 <i class="fa-solid fa-user"></i>
                 <a href="{% url 'login' %}">Kirish</a>
             </div>
+            {% endif %}
             <div style="border: 0.2px solid rgba(142, 139, 139, 0.23);"
                 class="w-[115px] h-[40px] rounded-lg py-2 bg-[#222933] text-[#99b1d4] text-[12px] flex itemes-center justify-center gap-[4px]">
-                <a href="{% url 'register' %}">Ro'yhatdan o'tish</a>
+                <a href="{% url 'register' %}">{{ user.username }}</a>
             </div>
         </div>
         <div class="flex items-center gap-2">
