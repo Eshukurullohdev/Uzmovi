@@ -30,8 +30,7 @@ def login(request):
                 user = authenticate(request, username=username, password=password)  # Oddiy foydalanuvchi uchun autentifikatsiya
                 if user:
                     auth_login(request, user)
-                    logger.info(f"Foydalanuvchi {username} tizimga kirdi.")
-                    print('ishladi')
+                    messages.success(request, "Siz autentifikatsiyadan o‘tdingiz!") 
                     return redirect('/home/')
                 else:
                     logger.warning(f"Login urunishda xatolik: {username}")

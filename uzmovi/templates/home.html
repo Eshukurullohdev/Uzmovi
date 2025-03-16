@@ -1,5 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>home</h1>
+<div class="relative">
+    {% if messages %}
+        {% for message in messages %}
+            <div id="flash-message" 
+                class="fixed top-5 right-5 flex items-center justify-center bg-green-500 text-white px-4 py-2 rounded-lg shadow-md transition-opacity duration-500">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+<script>
+    setTimeout(function() {
+        let msg = document.getElementById("flash-message");
+        if (msg) {
+            msg.classList.add("opacity-0"); // Xabarni sekin yo‘qotish
+            setTimeout(() => msg.remove(), 500); // DOM dan olib tashlash
+        }
+    }, 3000); // 3 soniyadan keyin o'chadi
+</script>
 {% endblock %}
+

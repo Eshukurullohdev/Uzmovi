@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     'qoidalar',
     'hindkino',
     'uzmovi',
-    'aloqa',
+    'aloqa',    
 ]
 
 MIDDLEWARE = [

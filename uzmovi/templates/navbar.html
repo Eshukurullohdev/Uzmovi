@@ -1,5 +1,6 @@
 {% load static %}
 <div class=" w-full h-[160px] bg-[#222933]">
+
     <div class="container_large w-full ">
         <div class="w-full h-[100px] flex itemes-center justify-between">
             <a href="{% url 'home' %}" class="mt-[10px]">
@@ -88,7 +89,7 @@
             {% endif %}
             <div style="border: 0.2px solid rgba(142, 139, 139, 0.23);"
                 class="w-[115px] h-[40px] rounded-lg py-2 bg-[#222933] text-[#99b1d4] text-[12px] flex itemes-center justify-center gap-[4px]">
-                <a href="{% url 'register' %}">{{ user.username }}</a>
+                <a href="{% url 'register' %}">Royhatdan otish</a>
             </div>
         </div>
         <div class="flex items-center gap-2">
@@ -121,3 +122,4 @@
     </div>
 </div>
 </div>
+
