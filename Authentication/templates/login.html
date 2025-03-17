@@ -3,13 +3,7 @@
 {% load static %}
 {% block content %}
 <div class="flex items-center justify-center mt-[60px] flex-col">
-    {% if messages %}
-    {% for message in messages %}
-        <div class="flash-message bg-green-500 text-white px-4 py-2 rounded-lg shadow-md mb-4 transition-opacity duration-500">
-            {{ message }}
-        </div>
-    {% endfor %}
-{% endif %}
+   
     <h1 class="font-semibold text-[#A5BBDC] text-[24px]">Tizimga Kirish</h1>
     <div>
         <form method="post">
@@ -72,12 +66,7 @@
     </div>
 </div>
 <script>
-    setTimeout(function() {
-        document.querySelectorAll(".flash-message").forEach(function(msg) {
-            msg.classList.add("opacity-0");
-            setTimeout(() => msg.remove(), 500);
-        });
-    }, 3000);
+    
 </script>
 {% endblock %}
 

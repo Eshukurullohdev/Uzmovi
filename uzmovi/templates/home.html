@@ -1,22 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <div class="relative">
     {% if messages %}
-        {% for message in messages %}
-            <div id="flash-message" 
-                class="fixed top-1 right-0 flex  bg-green-500 text-white px-4 py-2 rounded-lg shadow-md transition-opacity duration-500">
-                {{ message }}
-            </div>
-        {% endfor %}
+    {% for message in messages %}
+    <div id="flash-message" class="fixed top-1 left-[45%] bg-green-600 text-white rounded-lg p-2">
+        {{ message }}
+    </div>
+    {% endfor %}
     {% endif %}
 </div>
 <script>
     setTimeout(function() {
         let msg = document.getElementById("flash-message");
         msg.classList.add("opacity-0");
-        setTimeout(()=> msg.remove(), 500);
-    }, 3000)
+        setTimeout(()=> msg.remove(), 500)
+    }, 3000);
 </script>
 {% endblock %}
 
+<!-- if else -->
+<!-- foor loop -->
+<!-- setInterval -->
+<!-- SetTimeout -->
+<!-- Clear Interval -->
