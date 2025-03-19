@@ -70,7 +70,7 @@
     <div class="container_large flex itemes-center justify-between pt-4">
         <div class="flex items-center gap-2 ">
             {% if user.is_authenticated %}
-            <a href="#">
+            <a href="{% url 'logout' %}">
                 <div style="border: 0.2px solid rgba(142, 139, 139, 0.23);"
                     class="w-[66px] h-[40px] rounded-lg py-2 bg-[#222933] text-[#99b1d4] text-[12px] flex items-center justify-center gap-[4px]">
                     <i class="text-[22px] fa-solid fa-arrow-right-from-bracket"></i>

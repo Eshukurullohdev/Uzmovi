@@ -5,6 +5,7 @@
     margin: 0;
     font-family: "Ubuntu", serif;
     box-sizing: border-box;
+    user-select: none;
 }
 
 .container_large {

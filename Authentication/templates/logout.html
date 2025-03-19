@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container_large">
+    {% if messages %}
+    {% for message in messages %}
+    <div id="flash-message" class="fixed top-1 left-[45%] bg-red-600 text-white rounded-lg p-2">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+</div>
+<script>
+    setTimeout(function() {
+        let msg = document.getElementById("flash-message");
+        msg.classList.add("opacity-0");
+        setTimeout(()=> msg.remove(), 500)
+    }, 4000);
+</script>
+{% endblock %}

@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login as auth_login, get_user_model
+from django.contrib.auth import authenticate, login as auth_login, logout,  get_user_model
 from django.shortcuts import render, redirect
 import logging
 from django.contrib.auth.models import User
@@ -69,6 +69,11 @@ def register(request):
         return redirect('register')
 
     return render(request, 'register.html')
+
+def Logout(request):
+    logout(request)
+    messages.success(request, "Siz tizimdan muvafaqiyatli chiqib ketingiz")
+    return render(request, 'logout.html')
 
 def contact(request):
     return render(request, 'contact.html')
