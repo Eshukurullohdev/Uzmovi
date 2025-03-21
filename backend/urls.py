@@ -5,4 +5,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('uzmovi.urls')),
     path('auth/', include('Authentication.urls')),
+    path('kinolar/', include('kinolar.urls')),
 ]
