@@ -1,7 +1,40 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<style>
+    .text {
+        background: linear-gradient(to right, rgba(0, 168, 253), #fff 35%, #e00a95);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradient 3s linear infinite;
+    }
 
+    @keyframes gradient {
+        0% {
+            background-position: 0% 75%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 70%;
+        }
+    }
+
+    .play {
+        /* From https://css.glass */
+        /* From https://css.glass */
+        background: rgba(28, 171, 143, 0.6);
+
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        border: 1px solid rgba(28, 171, 143, 0.62);
+    }
+</style>
 <div class="relative">
     {% if messages %}
     {% for message in messages %}
@@ -10,12 +43,32 @@
     </div>
     {% endfor %}
     {% endif %}
+
+    <div class="container_large">
+        <div class="mt-4 flex gap-4">
+            <div class="w-[2px] h-[35px] bg-[#5A3C6F]"></div>
+            <strong class="text text-[#728198] text-[20px]">PREMYERALAR</strong>
+        </div>
+        <a href="#">
+
+            <div class="video mt-4 relative ">
+                <video>
+                    <source src="/static/img/27400-363524230_small.mp4" type="">
+                </video>
+                <div
+                    class="play w-[75px] h-[75px] bg-[#1AAA8E] rounded-full flex items-center justify-center absolute top-[42%] left-[48%]">
+                    <i class="text-[40px] fa-solid fa-play"></i>
+                </div>
+            </div>
+        </a>
+    </div>
+
 </div>
 <script>
-    setTimeout(function() {
+    setTimeout(function () {
         let msg = document.getElementById("flash-message");
         msg.classList.add("opacity-0");
-        setTimeout(()=> msg.remove(), 500)
+        setTimeout(() => msg.remove(), 500)
     }, 3000);
 </script>
 {% endblock %}
