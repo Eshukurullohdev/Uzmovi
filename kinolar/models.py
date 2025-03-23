@@ -19,7 +19,7 @@ class Movie(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='movies')
     janiri = models.ManyToManyField(Genre, related_name='movies')
     video_file = models.FileField(upload_to='media/', blank=True, null=True)
-    
+    davlati = models.CharField(max_length=100, blank=True, null=True)
     
     
 
