@@ -50,16 +50,15 @@
             <strong class="text text-[#728198] text-[20px]">PREMYERALAR</strong>
         </div>
         <a href="{% url 'detail' %}">
-
+            {% for kino in kino %}
             <div class="video mt-4 relative ">
-                <video>
-                    <source src="/static/img/27400-363524230_small.mp4" type="">
-                </video>
+                <img src="{{ kino.video_file.url }}" alt="" class="w-full h-full object-cover">
                 <div
                     class="play w-[75px] h-[75px] bg-[#1AAA8E] rounded-full flex items-center justify-center absolute top-[42%] left-[48%]">
                     <i class="text-[40px] fa-solid fa-play"></i>
                 </div>
             </div>
+            {% endfor %}
         </a>
     </div>
 
