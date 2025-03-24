@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 <style>
     .text {
@@ -49,17 +49,17 @@
             <div class="w-[2px] h-[35px] bg-[#5A3C6F]"></div>
             <strong class="text text-[#728198] text-[20px]">PREMYERALAR</strong>
         </div>
+        {% for kino in kino %}
         <a href="{% url 'detail' %}">
-            {% for kino in kino %}
             <div class="video mt-4 relative ">
-                <img src="{{ kino.video_file.url }}" alt="" class="w-full h-full object-cover">
+                <img src="{{ kino.poster.url }}" alt="" class="w-full h-full object-cover">
                 <div
                     class="play w-[75px] h-[75px] bg-[#1AAA8E] rounded-full flex items-center justify-center absolute top-[42%] left-[48%]">
                     <i class="text-[40px] fa-solid fa-play"></i>
                 </div>
             </div>
-            {% endfor %}
         </a>
+        {% endfor %}
     </div>
 
 </div>

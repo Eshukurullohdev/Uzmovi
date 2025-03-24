@@ -1,28 +1,35 @@
 from django.db import models
 
-class Category(models.Model):
-    category = models.CharField(max_length=100, unique=True)
+class CategoryKino(models.Model):
+    categorykino = models.CharField(max_length=100, unique=True)
     
     def __str__(self):
-        return self.category
-
-# Janr modeli
-class Genre(models.Model):
-    janiri = models.CharField(max_length=100, unique=True)
+        return self.categorykino
+class CategoryDavlati(models.Model):
+    categorydavlati = models.CharField(max_length=100, unique=True)
+    
     def __str__(self):
-        return self.janiri
-
+        return self.categorydavlati
+    
+class CategoryTili(models.Model):
+    categorytili = models.CharField(max_length=100, unique=True)
+    def __str__(self):
+        return self.categorytili
+    
+class CategoryYili(models.Model):
+    categoryyili = models.CharField(max_length=100, null=True)    
+    def __str__(self):
+        return self.categoryyili
+    
 class Movie(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     release_date = models.DateField()
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='movies')
-    janiri = models.ManyToManyField(Genre, related_name='movies')
-    video_file = models.FileField(upload_to='media/', blank=True, null=True)
-    davlati = models.CharField(max_length=100, blank=True, null=True)
+    poster = models.ImageField(upload_to='media/')
+    categorykinolar = models.ForeignKey(CategoryKino, blank=True, null=True, on_delete=models.SET_NULL)
+    categorydavlati = models.ForeignKey(CategoryDavlati, blank=True, null=True, on_delete=models.SET_NULL)
+    categorytili = models.ForeignKey(CategoryTili, blank=True, null=True, on_delete=models.SET_NULL)
+    categoryyili = models.ForeignKey(CategoryYili, blank=True, null=True, on_delete=models.SET_NULL)
+    davomiyligi = models.CharField(max_length=100, null=True)
     
     
-
-    
-    def __str__(self):
-        return self.title

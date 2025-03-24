@@ -3,6 +3,7 @@
 {% load static %}
 {% block content %}
 <div class="w-[1170px] m-auto flex">
+    {% for kino in kino %}
     <div class="container_large mt-4 w-[872px]">
         <div class="flex items-center justify-between w-[872px]">
             <div class="flex items-center gap-4">
@@ -10,7 +11,7 @@
                 <div class="w-[9px] h-[50px] bg-[#0693BD]">
                 </div>
                 <strong class="text-[22px] text-[#A5BBDC]">
-                    SOXTA JOSUS (PREMYERA)
+                    {{ kino.title }}
                 </strong>
             </div>
             <div class="w-[44px] h-[44px] bg-[#0693BD] flex items-center justify-center">
@@ -18,7 +19,7 @@
             </div>
         </div>
         <div class="w-[872px] h-[417px] p-[20px] mt-[20px] mb-[20px] bg-[#24303d] flex">
-            <img src="/static/img/movie-img.jpg" alt="" class="w-[248px] h-[368px] ml-[20px]">
+            <img src="{{ kino.poster.url }}" alt="" class="w-[248px] h-[368px] ml-[20px] object-cover">
             <div>
                 <div class="w-[4px] h-[347px] bg-[#222933] ml-[30px] relative">
                     <div class=" absolute w-[12px] h-[12px] bg-[#304156] mt-[10px] right-[-5px]"></div>
@@ -36,7 +37,7 @@
                         <p class="text-[10px]">NOMI</p>
                     </div>
                     <div class="w-[381px] h-[37px] bg-[#222933] p-[10px]">
-                        <p class="text-[12px] text-[#798fa6] font-semibold">Soxta josus (premyera)</p>
+                        <p class="text-[12px] text-[#798fa6] font-semibold">{{ kino.title }}</p>
                     </div>
                 </div>
                 <div class="flex mt-[10px]">
@@ -53,7 +54,7 @@
                         <p class="text-[10px]">DAVLATI</p>
                     </div>
                     <div class="w-[381px] h-[37px] bg-[#222933] p-[10px]">
-                        <p class="text-[12px] text-[#a5bbdc] font-semibold">Buyuk Britaniya</p>
+                        <p class="text-[12px] text-[#a5bbdc] font-semibold">{{ kino.categorydavlati }}</p>
                     </div>
                 </div>
                 <div class="flex mt-[10px]">
@@ -61,7 +62,7 @@
                         <p class="text-[10px]">YILI</p>
                     </div>
                     <div class="w-[381px] h-[37px] bg-[#222933] p-[10px]">
-                        <p class="text-[12px] text-[#a5bbdc] font-semibold">2022</p>
+                        <p class="text-[12px] text-[#a5bbdc] font-semibold">{{ kino.categoryyili }}</p>
                     </div>
                 </div>
                 <div class="flex mt-[10px]">
@@ -69,7 +70,7 @@
                         <p class="text-[10px]">TILI</p>
                     </div>
                     <div class="w-[381px] h-[37px] bg-[#222933] p-[10px]">
-                        <p class="text-[12px] text-[#a5bbdc] font-semibold">O'zbekcha</p>
+                        <p class="text-[12px] text-[#a5bbdc] font-semibold">{{ kino.categorytili }}</p>
                     </div>
 
                 </div>
@@ -78,7 +79,7 @@
                         <p class="text-[10px]">DAVOMIYLIGI</p>
                     </div>
                     <div class="w-[381px] h-[37px] bg-[#222933] p-[10px]">
-                        <p class="text-[12px] text-[#a5bbdc] font-semibold">1 soat 55 daqiqa</p>
+                        <p class="text-[12px] text-[#a5bbdc] font-semibold">{{ kino.davomiyligi }}</p>
                     </div>
                 </div>
                 <div class="flex mt-[10px]">
@@ -99,12 +100,7 @@
                 <p class="text-[#fbc02d] text-[50px] mt-[20px] ml-[10px]">''</p>
             </div>
             <div class="text w-[650px] h-[145px]">
-                <p class="text-[14px] text-[#a5bbdc] mt-[20px]">Jozibador begona bilan boshlangan munosabatlar shiddatli
-                    josuslik voqealariga aylanadi, u MI-5 kontrrazvedkasida xizmat qilayotganini tan olganida. Ammo bu —
-                    faqat muzlik cho‘qqisi edi. Aslida esa "agent" firibgarlikda ayblanib, qidiruvga berilgan bo‘lib
-                    chiqadi. U bir necha jabrdiydani o‘z tuzog‘iga ilintirib, nafaqat ularning pulini, balki hayotlarini ham
-                    o‘z qo‘liga topshirtirgan edi. Endi aldangan ayol adolatni tiklash va boshqalarni uning maftunkor
-                    yolg‘onlaridan qutqarish uchun kurashga bel bog‘laydi.</p>
+                <p class="text-[14px] text-[#a5bbdc] mt-[20px]">{{  kino.description }}</p>
             </div>
         </div>
         <div class="w-[872px] h-[410px] mt-[20px]">
@@ -120,7 +116,7 @@
                 </div>
             </div>
             <div class="w-[872px] h-[365px] relative">
-                <img class=" absolute w-full h-full object-cover" src="/static/img/uzmovi.jpg" alt="">
+                <img class=" absolute w-full h-full object-cover" src="{{ kino.poster.url }}" alt="">
                 <a href="#">
                     <i style="/* From https://css.glass */
                 background: rgba(19, 19, 19, 0.35);
@@ -147,6 +143,8 @@
             </div>
         </div>
     </div>
+    {% endfor %}
+
     <div class="mt-[20px]">
         <div class="w-full h-[60px] flex itemes-center justify-center">
             <div class="flex itemes-center justify-center w-[68px] h-[60px] bg-[#2aabeeb3]">
