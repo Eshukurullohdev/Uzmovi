@@ -57,15 +57,30 @@
             </div>
         </a>
         {% endfor %}
-
     </div>
-    <div class="mt-4 bg-red-500 w-full">
-        <div class="flex ">
-            <div class="w-[5px] h-[50px] bg-[#0C6684]"></div>
-            <h1>Tarjima Kinolar</h1>
+
+    <div class="bg-[#131A20] w-full mt-4">
+        <div class="container_large pt-6">
+            <div class="flex gap-2 justify-between">
+                <div class="flex gap-2">
+                    <div class="w-[3px] h-[40px] bg-[#0C6684]"></div>
+                    <h1 class="text-[23px] text-[#a5bbdc] font-bold">Tarjima Kinolar</h1>
+                </div>
+                <div class="flex gap-2">
+                    <div class="w-[12px] h-[5px] bg-white"></div>
+                    <div class="w-[12px] h-[5px] bg-white"></div>
+                </div>
+            </div>
+            <div class="mt-6">
+                <div class="w-[223px] h-[341px] bg-[#222933] p-2 rounded-sm hover:bg-[#212832] duration-300 cursor-pointer">
+                    <img   class="w-[203px]   h-[275px] object-cover hover:mix-blend-multiply hover:scale-105 duration-300 cursor-pointer " src="/static/img/uzmovi.jpg" alt="">
+                    <h1 class="text-center text-[#A4BADB] text-[13px] mt-4 hover:text-white duration-300">Amerkalik Pastrol</h1>
+                </div>
+            </div>
         </div>
     </div>
-
+</div>
+</div>
 </div>
 <script>
     setTimeout(function () {
@@ -73,5 +88,6 @@
         msg.classList.add("opacity-0");
         setTimeout(() => msg.remove(), 500)
     }, 3000);
+    
 </script>
 {% endblock %}
