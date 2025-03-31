@@ -47,7 +47,7 @@
             <strong class="text text-[#728198] text-[20px]">PREMYERALAR</strong>
         </div>
         {% for kino in kino %}
-        <a href="{% url 'detail' %}">
+        <a href="{% url 'detail_movie' kino.id %}">
             <div class="video mt-4 relative ">
                 <img src="{{ kino.poster.url }}" alt="" class="w-full h-full object-cover">
                 <div
