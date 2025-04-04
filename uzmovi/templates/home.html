@@ -25,11 +25,51 @@
     }
 
     .play {
+        /* From https://css.glass */
+        /* From https://css.glass */
         background: rgba(28, 171, 143, 0.6);
+
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(0px);
         -webkit-backdrop-filter: blur(0px);
         border: 1px solid rgba(28, 171, 143, 0.62);
+    }
+
+
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 </style>
 <div class="relative">
@@ -46,41 +86,242 @@
             <div class="w-[2px] h-[35px] bg-[#5A3C6F]"></div>
             <strong class="text text-[#728198] text-[20px]">PREMYERALAR</strong>
         </div>
-        {% for kino in kino %}
-        <a href="{% url 'detail_movie' kino.id %}">
-            <div class="video mt-4 relative ">
-                <img src="{{ kino.poster.url }}" alt="" class="w-full h-full object-cover">
-                <div
-                    class="play w-[75px] h-[75px] bg-[#1AAA8E] rounded-full flex items-center justify-center absolute top-[42%] left-[48%]">
-                    <i class="text-[40px] fa-solid fa-play"></i>
+
+        <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true"
+            space-between="30" centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+            {% for kino in kino %}
+            <swiper-slide>
+                <div class="w-full h-full bg-[#161D25]">
+                    <a href="{% url 'detail_movie' kino.id %}">
+                        <div class="video mt-4 relative">
+                            <img src="{{ kino.poster.url }}" alt="{{ kino.title }}"
+                                class="w-full h-full w-[1170px] h-[780px]  object-cover rounded-lg">
+                            <div
+                                class="play w-[75px] h-[75px] bg-[#1AAA8E] rounded-full flex items-center justify-center absolute top-[42%] left-[48%]">
+                                <i class="text-[40px] fa-solid fa-play text-white"></i>
+                            </div>
+                        </div>
+                    </a>
                 </div>
+            </swiper-slide>
+            {% endfor %}
+            <div class="autoplay-progress" slot="container-end">
+                <div class="w-[38px] h-[60px] bg-[#30415647]">
+                    
+                </div>
+                <span></span>
             </div>
-        </a>
-        {% endfor %}
+        </swiper-container>
+        </div>
+
+
+
     </div>
 
-    <div class="bg-[#131A20] w-full mt-4">
-        <div class="container_large pt-6">
-            <div class="flex gap-2 justify-between">
+
+
+</div>
+
+
+
+<div class="bg-[#191F28] w-full mt-4">
+    <div class="container_large w-[100%] flex gap-3">
+
+        <div class="w-[900px] mt-[50px] relative">
+            
+            <div class="flex gap-2 justify-between w-[888px] mb-[10px]">
                 <div class="flex gap-2">
                     <div class="w-[3px] h-[40px] bg-[#0C6684]"></div>
-                    <h1 class="text-[23px] text-[#a5bbdc] font-bold">Tarjima Kinolar</h1>
+                    <h1 class="text-[23px] text-[#a5bbdc] font-bold uppercase">Tarjima kinolar</h1>
                 </div>
-                <div class="flex gap-2">
+                <div class="flex gap-1 pt-5">
                     <div class="w-[12px] h-[5px] bg-white"></div>
                     <div class="w-[12px] h-[5px] bg-white"></div>
                 </div>
             </div>
-            <div class="mt-6">
-                <div class="w-[223px] h-[341px] bg-[#222933] p-2 rounded-sm hover:bg-[#212832] duration-300 cursor-pointer">
-                    <img   class="w-[203px]   h-[275px] object-cover hover:mix-blend-multiply hover:scale-105 duration-300 cursor-pointer " src="/static/img/uzmovi.jpg" alt="">
-                    <h1 class="text-center text-[#A4BADB] text-[13px] mt-4 hover:text-white duration-300">Amerkalik Pastrol</h1>
+
+            <div class="flex gap-3">
+
+
+                <swiper-container class="mySwiper" navigation="true" slides-per-view="4">
+                    <swiper-slide><div>
+                        <div class="w-[213px] h-[331px] bg-[#222933] p-2 rounded-sm hover:bg-[#222939] cursor-pointer">
+                            <img class="w-[223px] h-[275px] object-cover" src="/static/img/danial.jpg" alt="">
+                            <h1 class="text-center text-[#a4badb] text-[13px] mt-4 hover:text-white duration-300">Inkor
+                                (premyera)
+                            </h1>
+                        </div>
+                    </div></swiper-slide>
+                    
+                    
+                    <swiper-slide><div>
+                        <div class="w-[213px] h-[331px] bg-[#222933] p-2 rounded-sm hover:bg-[#222939] cursor-pointer">
+                            <img class="w-[223px] h-[275px] object-cover" src="/static/img/mantaj.jpg" alt="">
+                            <h1 class="text-center text-[#a4badb] text-[13px] mt-4 hover:text-white duration-300">Mantaj
+                                (premyera)
+                            </h1>
+                        </div>
+                    </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div>
+                            <div class="w-[213px] h-[331px] bg-[#222933] p-2 rounded-sm hover:bg-[#222939] cursor-pointer">
+                                <img class="w-[223px] h-[275px] object-cover" src="/static/img/javobzarbasi.jpg" alt="">
+                                <h1 class="text-center text-[#a4badb] text-[13px] mt-4 hover:text-white duration-300">Uch
+                                    ninziya javob zarbasi
+                                </h1>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    
+                    <swiper-slide>
+                        <div>
+                            <div class="w-[213px] h-[331px] bg-[#222933] p-2 rounded-sm hover:bg-[#222939] cursor-pointer">
+                                <img class="w-[223px] h-[275px] object-cover" src="/static/img/brutalist.jpg" alt="">
+                                <h1 class="text-center text-[#a4badb] text-[13px] mt-4 hover:text-white duration-300">Brutalist
+                                    (premyera)
+                                </h1>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div>
+                            <div class="w-[213px] h-[331px] bg-[#222933] p-2 rounded-sm hover:bg-[#222939] cursor-pointer">
+                                <img class="w-[223px] h-[275px] object-cover" src="/static/img/bisharashki.jpg" alt="">
+                                <h1 class="text-center text-[#a4badb] text-[13px] mt-4 hover:text-white duration-300">Bechoralar Taylandda (premyera)
+                                </h1>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div>
+                            <div class="w-[213px] h-[331px] bg-[#222933] p-2 rounded-sm hover:bg-[#222939] cursor-pointer">
+                                <img class="w-[223px] h-[275px] object-cover" src="/static/img/zodiak.jpg" alt="">
+                                <h1 class="text-center text-[#a4badb] text-[13px] mt-4 hover:text-white duration-300">Zodiak o'zbek tilida
+                                </h1>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                  </swiper-container>
+                
+                  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+                
+
+                
+
+
+                
+                        
+
+               
+
+                
+
+                
+
+                
+            </div>
+
+            <div class="flex gap-2 justify-between w-[888px] mt-[30px] mb-[10px]">
+                <div class="flex gap-2">
+                    <div class="w-[3px] h-[40px] bg-[#8B4316]"></div>
+                    <h1 class="text-[23px] text-[#a5bbdc] font-bold uppercase">Hind kinolar</h1>
+                </div>
+                <div class="flex gap-1 pt-5">
+                    <div class="w-[12px] h-[5px] bg-white"></div>
+                    <div class="w-[12px] h-[5px] bg-white"></div>
+                    <div class="w-[12px] h-[5px] bg-white"></div>
+                </div>
+            </div>
+            <div class="flex gap-3">
+
+
+                <swiper-container class="mySwiper" navigation="true" slides-per-view="4">
+                    <swiper-slide><div>
+                        <div class="w-[213px] h-[331px] bg-[#222933] p-2 rounded-sm hover:bg-[#222939] cursor-pointer">
+                            <img class="w-[223px] h-[275px] object-cover" src="/static/img/raqobatchilar.jpg" alt="">
+                            <h1 class="text-center text-[#a4badb] text-[13px] mt-4 hover:text-white duration-300">Raqobatchilar
+                            </h1>
+                        </div>
+                    </div></swiper-slide>
+                    
+                    
+                    <swiper-slide><div>
+                        <div class="w-[213px] h-[331px] bg-[#222933] p-2 rounded-sm hover:bg-[#222939] cursor-pointer">
+                            <img class="w-[223px] h-[275px] object-cover" src="/static/img/qoraniqob.jpg" alt="">
+                            <h1 class="text-center text-[#a4badb] text-[13px] mt-4 hover:text-white duration-300">Qora niqob
+                            </h1>
+                        </div>
+                    </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div>
+                            <div class="w-[213px] h-[331px] bg-[#222933] p-2 rounded-sm hover:bg-[#222939] cursor-pointer">
+                                <img class="w-[223px] h-[275px] object-cover" src="/static/img/avgust.jpg" alt="">
+                                <h1 class="text-center text-[#a4badb] text-[13px] mt-4 hover:text-white duration-300">17-avgust, 1947-yil (premyera)
+                                </h1>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    
+                    <swiper-slide>
+                        <div>
+                            <div class="w-[213px] h-[331px] bg-[#222933] p-2 rounded-sm hover:bg-[#222939] cursor-pointer">
+                                <img class="w-[223px] h-[275px] object-cover" src="/static/img/72saot.jpg" alt="">
+                                <h1 class="text-center text-[#a4badb] text-[12px] mt-2 hover:text-white duration-300">72-soat doim qalbimizda yashovchi shaxid
+                                </h1>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div>
+                            <div class="w-[213px] h-[331px] bg-[#222933] p-2 rounded-sm hover:bg-[#222939] cursor-pointer">
+                                <img class="w-[223px] h-[275px] object-cover" src="/static/img/sinmas.jpg" alt="">
+                                <h1 class="text-center text-[#a4badb] text-[13px] mt-4 hover:text-white duration-300">Sinmas hqiqat 2 (premyera)
+                                </h1>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div>
+                            <div class="w-[213px] h-[331px] bg-[#222933] p-2 rounded-sm hover:bg-[#222939] cursor-pointer">
+                                <img class="w-[223px] h-[275px] object-cover" src="/static/img/dussera.jpg" alt="">
+                                <h1 class="text-center text-[#a4badb] text-[13px] mt-4 hover:text-white duration-300">Dussera / sirli o'lim
+                                </h1>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                  </swiper-container>
+
+
+                
+                
+            </div>
+        </div>
+
+
+        <div class="mt-[50px]">
+            <div class="w-full h-[60px] flex itemes-center justify-center mt-[10px]">
+                <div class="rounded-l-[3px] flex itemes-center justify-center w-[68px] h-[60px] bg-[#2aabeeb3]">
+                    <i class="fa-brands fa-telegram text-[#fff] text-[27px] mt-[18px]"></i>
+                </div>
+                <div class="flex itemes-center justify-center w-[68px] h-[60px] bg-[#f12567b3]">
+                    <i class="fa-brands fa-youtube text-[#fff] text-[27px] mt-[18px]"></i>
+                </div>
+                <div class="flex itemes-center justify-center w-[68px] h-[60px] bg-[#000]">
+                    <i class="fa-brands fa-tiktok text-[#fff] text-[27px] mt-[18px]"></i>
+                </div>
+                <div class="rounded-r-[3px] flex itemes-center justify-center w-[68px] h-[60px] bg-[#c13584b3]">
+                    <i class="fa-brands fa-instagram text-[#fff] text-[27px] mt-[18px]"></i>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
-</div>
+
+
+
 </div>
 <script>
     setTimeout(function () {
@@ -88,6 +329,34 @@
         msg.classList.add("opacity-0");
         setTimeout(() => msg.remove(), 500)
     }, 3000);
-    
+
+
+    const carousel = document.querySelector(".carousel");
+    const totalItems = document.querySelectorAll(".carousel > div").length;
+    let index = 0;
+
+    document.getElementById("rigth").addEventListener("click", function () {
+        index++;
+        if (index >= totalItems) {
+            index = 0;
+        }
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+    });
+
+    document.getElementById("left").addEventListener("click", function () {
+        index--;
+        if (index < 0) {
+            index = totalItems - 1; i
+        }
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+    });
 </script>
+
+
 {% endblock %}
+
+<!-- if else -->
+<!-- foor loop -->
+<!-- setInterval -->
+<!-- SetTimeout -->
+<!-- Clear Interval -->

@@ -1,7 +1,41 @@
 {% load static %}
-<div class=" w-full h-[160px] bg-[#222933]">
+<style>
+    html,
+    body {
+        position: relative;
+        height: 100%;
+    }
 
-    <div class="container_large w-full ">
+    body {
+        background: #eee;
+        font-size: 14px;
+        color: #000;
+    }
+
+    swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #161d25;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    swiper-slide img {
+        display: block;
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+    }
+</style>
+<div class="wrapper w-full h-[160px] bg-[#222933]">
+
+    <div class="wrap container_large w-full ">
         <div class="w-full h-[100px] flex itemes-center justify-between">
             <a href="{% url 'home' %}" class="mt-[10px]">
                 <img src="/static/img/logo.gif" alt="">
@@ -26,45 +60,121 @@
         </div>
     </div>
 
+
+
     <div class="bg-[#161d25] w-[100%] h-[3474px] ">
         <div class="w-[1170px] h-[80px] flex gap-[12px] mx-auto py-[12px]">
-            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
-                src="{% static 'img/birinchirasm.jpg' %}" alt="">
-            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
-                src="{% static 'img/ikkinchirasm.jpg' %}" alt="">
-            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
-                src="{% static 'img/uchinchirasm.jpg' %}" alt="">
-            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
-                src="{% static 'img/tortinchirasm.jpg' %}" alt="">
-            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
-                src="{% static 'img/beshinchirasm.jpg' %}" alt="">
-            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
-                src="{% static 'img/oltinchirasm.jpg' %}" alt="">
-            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
-                src="{% static 'img/yettinchirasm.jpg' %}" alt="">
-            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
-                src="{% static 'img/sakkizinchirasm.jpg' %}" alt="">
-            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
-                src="{% static 'img/toqqizinchirasm.jpg' %}" alt="">
-            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
-                src="{% static 'img/oninchirasm.jpg' %}" alt="">
-            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
-                src="{% static 'img/onbirinchirasm.jpg' %}" alt="">
-            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
-                src="{% static 'img/onikkinchirasm.jpg' %}" alt="">
-            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
-                src="{% static 'img/onuchinchirasm.jpg' %}" alt="">
-            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
-                src="{% static 'img/ontortinchirasm.jpg' %}" alt="">
-            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
-                src="{% static 'img/onbeshinchirasm.jpg' %}" alt="">
-            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
-                src="{% static 'img/onoltinchirasm.jpg' %}" alt="">
-
-            <img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
-                src="{% static 'img/onyettinchirasm.jpg' %}" alt="">
+            <swiper-container class="mySwiper" slides-per-view="16">
+                <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                        src="{% static 'img/birinchirasm.jpg' %}" alt=""></swiper-slide>
+                <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                        src="{% static 'img/ikkinchirasm.jpg' %}" alt=""></swiper-slide>
+                <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                        src="{% static 'img/uchinchirasm.jpg' %}" alt=""></swiper-slide>
+                <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                        src="{% static 'img/tortinchirasm.jpg' %}" alt=""></swiper-slide>
+                <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                        src="{% static 'img/beshinchirasm.jpg' %}" alt=""></swiper-slide>
+                <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                        src="{% static 'img/oltinchirasm.jpg' %}" alt=""></swiper-slide>
+                <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                        src="{% static 'img/yettinchirasm.jpg' %}" alt=""></swiper-slide>
+                <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                        src="{% static 'img/sakkizinchirasm.jpg' %}" alt=""></swiper-slide>
+                <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                        src="{% static 'img/toqqizinchirasm.jpg' %}" alt=""></swiper-slide>
+                <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                        src="{% static 'img/oninchirasm.jpg' %}" alt=""></swiper-slide>
+                <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                        src="{% static 'img/onbirinchirasm.jpg' %}" alt=""></swiper-slide>
+                <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                        src="{% static 'img/onikkinchirasm.jpg' %}" alt=""></swiper-slide>
+                <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                        src="{% static 'img/onuchinchirasm.jpg' %}" alt=""></swiper-slide>
+                <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                        src="{% static 'img/ontortinchirasm.jpg' %}" alt=""></swiper-slide>
+                <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                        src="{% static 'img/onbeshinchirasm.jpg' %}" alt=""></swiper-slide>
+                <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                        src="{% static 'img/onoltinchirasm.jpg' %}" alt=""></swiper-slide>
+                <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                        src="{% static 'img/onyettinchirasm.jpg' %}" alt=""></swiper-slide>
+                        <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                            src="{% static 'img/birinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                            src="{% static 'img/ikkinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                            src="{% static 'img/uchinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                            src="{% static 'img/tortinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                            src="{% static 'img/beshinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                            src="{% static 'img/oltinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                            src="{% static 'img/yettinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                            src="{% static 'img/sakkizinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                            src="{% static 'img/toqqizinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                            src="{% static 'img/oninchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                            src="{% static 'img/onbirinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                            src="{% static 'img/onikkinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                            src="{% static 'img/onuchinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                            src="{% static 'img/ontortinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                            src="{% static 'img/onbeshinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                            src="{% static 'img/onoltinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                            src="{% static 'img/onyettinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                                src="{% static 'img/birinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                                src="{% static 'img/ikkinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                                src="{% static 'img/uchinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                                src="{% static 'img/tortinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                                src="{% static 'img/beshinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                                src="{% static 'img/oltinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                                src="{% static 'img/yettinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                                src="{% static 'img/sakkizinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                                src="{% static 'img/toqqizinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                                src="{% static 'img/oninchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                                src="{% static 'img/onbirinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                                src="{% static 'img/onikkinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                                src="{% static 'img/onuchinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                                src="{% static 'img/ontortinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                                src="{% static 'img/onbeshinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                                src="{% static 'img/onoltinchirasm.jpg' %}" alt=""></swiper-slide>
+                    <swiper-slide><img class="w-[56px] h-[56px] rounded-full border-[2px] border-gray-500"
+                                src="{% static 'img/onyettinchirasm.jpg' %}" alt=""></swiper-slide>    
+            </swiper-container>
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
         </div>
     </div>
+
+
+
+
 </div>
 <div class="w-full bg-[#131A20] h-[140px] mt-4">
     <div class="container_large flex itemes-center justify-between pt-4">
@@ -76,17 +186,22 @@
                     <i class="text-[22px] fa-solid fa-arrow-right-from-bracket"></i>
                 </div>
             </a>
+            <div style="border: 0.2px solid rgba(142, 139, 139, 0.23);"
+                class="w-[115px] h-[40px] rounded-lg py-2 bg-[#222933] text-[#99b1d4] text-[12px] flex itemes-center justify-center gap-[4px]">
+                <a href="{% url 'register' %}">{{ user.username }}</a>
+            </div>
             {% else %}
             <div style="border: 0.2px solid rgba(142, 139, 139, 0.23);"
                 class="w-[66px] h-[40px] rounded-lg py-2 bg-[#222933] text-[#99b1d4] text-[12px] flex items-center justify-center gap-[4px]">
                 <i class="fa-solid fa-user"></i>
                 <a href="{% url 'login' %}">Kirish</a>
             </div>
-            {% endif %}
             <div style="border: 0.2px solid rgba(142, 139, 139, 0.23);"
                 class="w-[115px] h-[40px] rounded-lg py-2 bg-[#222933] text-[#99b1d4] text-[12px] flex itemes-center justify-center gap-[4px]">
                 <a href="{% url 'register' %}">Royhatdan otish</a>
             </div>
+            {% endif %}
+
         </div>
         <div class="flex items-center gap-2">
             <div style="border: 0.2px solid rgba(142, 139, 139, 0.23);"
@@ -118,4 +233,3 @@
     </div>
 </div>
 </div>
-
