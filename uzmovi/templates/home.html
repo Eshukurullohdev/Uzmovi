@@ -234,63 +234,19 @@
                 </div>
             </div>
             <div class="flex gap-3">
-
-
                 <swiper-container class="mySwiper" navigation="true" slides-per-view="4">
-                    <swiper-slide><div>
-                        <div class="w-[213px] h-[331px] bg-[#222933] p-2 rounded-sm hover:bg-[#222939] cursor-pointer">
-                            <img class="w-[223px] h-[275px] object-cover" src="/static/img/raqobatchilar.jpg" alt="">
-                            <h1 class="text-center text-[#a4badb] text-[13px] mt-4 hover:text-white duration-300">Raqobatchilar
-                            </h1>
-                        </div>
-                    </div></swiper-slide>
-                    
-                    
-                    <swiper-slide><div>
-                        <div class="w-[213px] h-[331px] bg-[#222933] p-2 rounded-sm hover:bg-[#222939] cursor-pointer">
-                            <img class="w-[223px] h-[275px] object-cover" src="/static/img/qoraniqob.jpg" alt="">
-                            <h1 class="text-center text-[#a4badb] text-[13px] mt-4 hover:text-white duration-300">Qora niqob
-                            </h1>
-                        </div>
-                    </div>
-                    </swiper-slide>
+                    {% for multfilmlar in multfilmalr %}
                     <swiper-slide>
                         <div>
                             <div class="w-[213px] h-[331px] bg-[#222933] p-2 rounded-sm hover:bg-[#222939] cursor-pointer">
-                                <img class="w-[223px] h-[275px] object-cover" src="/static/img/avgust.jpg" alt="">
-                                <h1 class="text-center text-[#a4badb] text-[13px] mt-4 hover:text-white duration-300">17-avgust, 1947-yil (premyera)
+                                <img class="w-[223px] h-[275px] object-cover" src="{{ multfilmlar.poster.url }}" alt="">
+                                <h1 class="text-center text-[#a4badb] text-[13px] mt-4 hover:text-white duration-300">
+                                    {{ multfilmlar.title }}
                                 </h1>
                             </div>
                         </div>
                     </swiper-slide>
-                    
-                    <swiper-slide>
-                        <div>
-                            <div class="w-[213px] h-[331px] bg-[#222933] p-2 rounded-sm hover:bg-[#222939] cursor-pointer">
-                                <img class="w-[223px] h-[275px] object-cover" src="/static/img/72saot.jpg" alt="">
-                                <h1 class="text-center text-[#a4badb] text-[12px] mt-2 hover:text-white duration-300">72-soat doim qalbimizda yashovchi shaxid
-                                </h1>
-                            </div>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div>
-                            <div class="w-[213px] h-[331px] bg-[#222933] p-2 rounded-sm hover:bg-[#222939] cursor-pointer">
-                                <img class="w-[223px] h-[275px] object-cover" src="/static/img/sinmas.jpg" alt="">
-                                <h1 class="text-center text-[#a4badb] text-[13px] mt-4 hover:text-white duration-300">Sinmas hqiqat 2 (premyera)
-                                </h1>
-                            </div>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div>
-                            <div class="w-[213px] h-[331px] bg-[#222933] p-2 rounded-sm hover:bg-[#222939] cursor-pointer">
-                                <img class="w-[223px] h-[275px] object-cover" src="/static/img/dussera.jpg" alt="">
-                                <h1 class="text-center text-[#a4badb] text-[13px] mt-4 hover:text-white duration-300">Dussera / sirli o'lim
-                                </h1>
-                            </div>
-                        </div>
-                    </swiper-slide>
+                    {% endfor %}
                   </swiper-container>
 
 
