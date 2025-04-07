@@ -77,5 +77,6 @@ def Logout(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
 def regulation(request):
     return render(request, 'regulation.html')
