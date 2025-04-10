@@ -1,0 +1,61 @@
+{%  extends 'base.html' %}
+{%  block content %}
+<style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    swiper-container {
+      width: 90%;
+      height: 100%;
+    }
+
+    swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      width: 1px;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+</style>
+<div class="flex gap-3 container_large">
+    <swiper-container class="mySwiper" navigation="true" slides-per-view="4">
+        {% for movieyil in movieyil %}
+        <swiper-slide style="width: 200px;">
+            <div>
+                <div class="w-[223px] h-[331px] bg-[#222933] p-2 rounded-sm hover:bg-[#222939] cursor-pointer">
+                    <img class="w-[223px] h-[275px] object-cover" src="{{ movieyil.poster.url }}" alt="">
+                    <h1 class="text-center text-[#a4badb] text-[13px] mt-4 hover:text-white duration-300">
+                        {{ movieyil.title }}
+                    </h1>
+                </div>
+            </div>
+        </swiper-slide>
+        {% endfor %}
+      </swiper-container>
+
+
+    
+    
+</div>
+{% endblock %}
