@@ -10,6 +10,7 @@ def home(request):
 def NavBar(request):
     return render(request, 'navbar.html')
 
+
 def movieyear(request, yil):
     movieyil = Movie.objects.filter(categoryyili__categoryyili__iexact=yil)
     return render(request, 'movie_by_year.html', {
